@@ -6,16 +6,21 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "extract": "formatjs extract src/**/*.ts* --ignore=**/*.d.ts --out-file lang/en-US.json --id-interpolation-pattern [sha512:contenthash:base64:6]",
+    "compile": "formatjs compile lang/en-US.json --ast --out-file src/compiled-lang/en-US.json"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-intl": "^6.3.2"
   },
   "devDependencies": {
+    "@formatjs/cli": "^6.0.4",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
+    "babel-plugin-formatjs": "^10.4.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   }
